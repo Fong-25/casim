@@ -13,7 +13,7 @@ export default function MascotPlaceholder({ className = "" }) {
         return (
             <div className={`relative shrink-0 ${className}`}>
                 <img
-                    src="/images/mascot.png"
+                    src="/images/mascot2.png"
                     alt="JobLens mascot"
                     onError={() => setFailed(true)}
                     className="block h-full w-full object-contain"

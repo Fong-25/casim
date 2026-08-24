@@ -1,57 +1,82 @@
 import MascotPlaceholder from "../components/common/Mascot";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-linear-to-r from-[#3163dc] via-[#3163dc] to-[#00c4cc] pt-16 md:pt-[70px]">
+        <section className="relative min-h-screen w-full overflow-hidden bg-linear-to-r from-[#3163dc] via-[#3163dc] to-[#00c4cc] pt-16 md:pt-17.5">
+
+            {/* ambient glow blobs */}
             <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-jl-sky-300/30 blur-[100px]" />
             <div className="pointer-events-none absolute bottom-0 right-0 h-112 w-md rounded-full bg-jl-pink-500/20 blur-[120px]" />
 
-            <div className="relative mx-auto flex max-w-7xl flex-col items-center px-5 pb-10 pt-14 sm:px-8">
+            <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-6 sm:px-8">
+                {/* Wordmark with glow "feet" — sized up */}
                 <div className="relative select-none text-center">
                     <span
                         aria-hidden="true"
-                        className="absolute inset-0 text-[19vw] font-display font-extrabold leading-none tracking-tight text-white/30 blur-xl sm:text-[16vw] md:text-[10.5rem]"
+                        className="absolute inset-0 font-display font-extrabold leading-none tracking-tight text-white/70 blur-2xl text-[23vw] sm:text-[19vw] md:text-[13rem]"
                     >
                         JobLens
                     </span>
                     <span
-                        className="relative block text-[19vw] font-display font-extrabold leading-none tracking-tight text-white sm:text-[16vw] md:text-[10.5rem]"
+                        className="relative block font-display font-extrabold leading-none tracking-tight text-white text-[23vw] sm:text-[19vw] md:text-[13rem]"
                         style={{
-                            WebkitMaskImage: "linear-gradient(to bottom, blue 55%, transparent 90%)",
-                            maskImage: "linear-gradient(to bottom, blue 55%, transparent 90%)",
+                            WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 96%)",
+                            maskImage: "linear-gradient(to bottom, black 55%, transparent 96%)",
                         }}
                     >
                         JobLens
                     </span>
                 </div>
 
-                {/* <div className="mt-6 w-full md:mt-10">
-                    <div className="relative mx-auto grid w-full max-w-[1200px] items-end gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)] md:gap-2">
-                        <div className="order-2 flex items-start justify-center md:order-1 md:justify-end md:-translate-y-6">
-                            <div className="w-full max-w-[430px]">
-                                <span className="block w-full rounded-[10px] bg-jl-pink-500 px-5 py-3 text-center font-body text-sm font-bold text-white shadow-lg shadow-jl-pink-500/30 sm:text-base">
-                                    &ldquo;Trải nghiệm thực tế nghề nghiệp&rdquo;
-                                </span>
-                                <p className="mt-4 w-full max-w-[430px] font-body text-[15px] leading-relaxed text-white/90 sm:text-base">
-                                    Joblens là nền tảng mô phỏng công việc bằng AI, giúp người dùng
-                                    nhập vai vào các tình huống thực tế trong 3 ngành:{" "}
-                                    <strong className="font-bold text-white">Thương mại điện tử</strong>,{" "}
-                                    <strong className="font-bold text-white">Marketing</strong> và{" "}
-                                    <strong className="font-bold text-white">Hệ thống thông tin quản lý</strong>
-                                </p>
-                            </div>
+                {/* Divider line — the two halves pushed further apart */}
+                <div className="mt-3 flex w-full max-w-2xl items-center gap-8 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70 sm:gap-10 sm:text-xs opacity-75">
+                    <span className="whitespace-nowrap">Hãy cùng bắt đầu</span>
+                    <span className="h-px flex-1 bg-white/25" />
+                    <span className="whitespace-nowrap">hành trình trải nghiệm</span>
+                </div>
+
+                {/* Stage row: text block sits top-left, mascot is bottom-anchored and
+                horizontally centered within the row. The mascot is now taller than
+                the row itself, so it overflows upward and covers a bit of the
+                wordmark's feet + the divider line above, same as the reference. */}
+                <div className="relative mt-8 w-full min-h-75 sm:min-h-90 md:mt-10 md:min-h-105 lg:min-h-115] p-0">
+                    {/* Badge + copy — same width, pinned left, widened */}
+                    <div className="relative z-10 flex w-full max-w-95 flex-col items-start gap-4 text-left sm:max-w-95 -translate-x-10">
+                        <div className="w-full rounded-md bg-jl-pink-500 px-5 py-2.5 font-body text-sm font-bold text-white shadow-lg shadow-jl-pink-500/30">
+                            &ldquo;Trải nghiệm thực tế nghề nghiệp&rdquo;
                         </div>
+                        <p className="w-full font-body text-[15px] leading-relaxed text-white/90 sm:text-base">
+                            Joblens là nền tảng mô phỏng công việc bằng AI, giúp người dùng
+                            nhập vai vào các tình huống thực tế trong 3 ngành:{" "}
+                            <strong className="font-bold text-white">Thương mại điện tử</strong>,{" "}
+                            <strong className="font-bold text-white">Marketing</strong> và{" "}
+                            <strong className="font-bold text-white">Hệ thống thông tin quản lý</strong>
+                        </p>
+                    </div>
 
-                        <div className="relative order-1 flex justify-center md:order-2 md:justify-center">
-                            <span className="absolute -left-6 top-10 h-10 w-10 rotate-12 rounded-lg bg-jl-pink-400/85 shadow-[0_18px_30px_rgba(239,93,168,0.25)] animate-[float_5s_ease-in-out_infinite] sm:-left-8 sm:top-14 sm:h-12 sm:w-12" />
-                            <span className="absolute right-6 top-2 h-7 w-7 rounded-full bg-jl-sky-300/80 shadow-[0_18px_30px_rgba(169,194,255,0.28)] animate-[float_4s_ease-in-out_infinite_.5s] sm:right-10 sm:h-8 sm:w-8" />
-                            <span className="absolute bottom-12 left-4 h-12 w-12 rounded-full bg-white/15 shadow-[0_18px_30px_rgba(255,255,255,0.12)] animate-[float_6s_ease-in-out_infinite_1s] sm:h-16 sm:w-16" />
-                            <span className="absolute bottom-2 right-12 h-7 w-7 rounded-md bg-jl-sky-300/80 rotate-12 animate-[float_5s_ease-in-out_infinite_1.2s] sm:h-9 sm:w-9" />
+                    {/* Mascot — enlarged, bottom-middle of the section, overlapping the
+                    wordmark/divider above, floating shapes surround it */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center">
+                        <div className="relative pointer-events-auto">
+                            <span className="absolute top-[3%] left-[68%] h-10 w-10 rotate-12 rounded-lg bg-jl-pink-400/80 animate-[float_5s_ease-in-out_infinite] sm:h-12 sm:w-12" />
+                            <span className="absolute top-[24%] left-[-9%] h-8 w-8 rounded-full bg-jl-sky-300/80 animate-[float_4s_ease-in-out_infinite_.5s] sm:h-9 sm:w-9" />
+                            <span className="absolute top-[46%] left-[95%] h-9 w-9 rounded-full bg-white/20 animate-[float_6s_ease-in-out_infinite_1s] sm:h-10 sm:w-10" />
+                            <span className="absolute top-[68%] left-[-12%] h-10 w-10 rotate-20 rounded-md bg-jl-pink-400/70 animate-[float_5.5s_ease-in-out_infinite_.3s] sm:h-11 sm:w-11" />
 
-                            <MascotPlaceholder className="h-[360px] w-[360px] -translate-y-4 drop-shadow-[0_25px_35px_rgba(10,5,40,0.35)] sm:h-[460px] sm:w-[460px] md:h-[560px] md:w-[560px] lg:h-[640px] lg:w-[640px]" />
+                            <MascotPlaceholder className="h-95 w-auto object-contain object-bottom sm:h-115 md:h-135 lg:h-145" />
                         </div>
                     </div>
-                </div> */}
+                    <div className="absolute bottom-50 h-55 bg-white right-0 w-40 rounded-xl flex flex-col justify-start align-start p-4">
+                        <h3 className="text-md font-bold bg-linear-to-r from-[#3163dc] to-[#00c4cc] text-transparent bg-clip-text">Data <br /> Analyst</h3>
+                        <p className="text-xs font-body bg-linear-to-r from-[#3163dc] to-[#00c4cc] text-transparent bg-clip-text">Trải nghiệm <br /> vị trí này</p>
+                        <div className="p-2 rounded-md mt-2 absolute bottom-4 left-4 bg-linear-to-r from-jl-blue-500 to-jl-violet-500 text-white text-md hover:scale-105 hover:brightness-110 transition-transform active:scale-98">
+                            <Link to='/register' >
+                                Bắt đầu
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <style>{`
@@ -60,6 +85,6 @@ export default function HeroSection() {
           50% { transform: translateY(-14px); }
         }
       `}</style>
-        </section>
+        </section >
     );
 }
