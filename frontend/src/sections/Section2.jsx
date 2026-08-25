@@ -41,7 +41,7 @@ const CARD_STAGGER = 0.035;
 
 // Envelope geometry, all in px, in a coordinate system where 0 = the
 // section's vertical center and values grow downward.
-const POCKET_WIDTH = 460;
+const POCKET_WIDTH = 800;
 const POCKET_HEIGHT = 200; // plain rectangle now — no pointed bottom
 const FLAP_HEIGHT = 120; // back flap, apex-up, sits directly above the pocket
 const POCKET_TOP_CLOSED = 40; // pocket's top edge when fully tucked in

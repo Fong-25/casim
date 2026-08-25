@@ -3,6 +3,7 @@ import HeroSection from "../sections/HeroSection";
 import Section2 from "../sections/Section2";
 import Section3 from "../sections/Section3";
 import Section4 from "../sections/Section4";
+import Section5 from "../sections/Section5";
 
 /**
  * The 4 landing sections stack top to bottom and scroll normally
@@ -17,6 +18,7 @@ export default function Landing() {
                 <Section2 />
                 <Section3 />
                 <Section4 />
+                <Section5 />
             </main>
         </>
     );
