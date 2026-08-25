@@ -3,13 +3,13 @@ export default function Whycard({
     paragraph,
     textColor = "#5274EA",
     backgroundColor = "#F7FAFA",
-    borderColor = "#D9D9D9",
+    borderColor = "#5274EA",
     blockColor = "#4C5BE0",
     imageUrl,
 }) {
     return (
         <div
-            className="relative h-[320px] w-[250px] overflow-hidden rounded-xl border px-4 pt-5"
+            className="relative h-[320px] w-[280px] overflow-hidden rounded-xl border-1 px-4 pt-5"
             style={{
                 backgroundColor,
                 color: textColor,
@@ -17,9 +17,11 @@ export default function Whycard({
             }}
         >
             {/* Header */}
-            <h2 className="text-[20px] font-bold leading-tight">
-                {header}
-            </h2>
+            <div className="flex items-center justify-center h-10">
+                <h2 className="text-[20px] font-bold leading-tight text-center">
+                    {header}
+                </h2>
+            </div>
 
             {/* Divider */}
             <div
