@@ -36,14 +36,14 @@ export default function Section5() {
                     <div className="h-full w-[40%] flex justify-center items-center bg-blue-600 rounded-2xl text-white text-center">
                         <Link
                             to="/register"
-                            className="text-white no-underline text-3xl font-semibold"
+                            className="text-white no-underline text-3xl font-semibold w-full h-full text-center flex justify-center items-center"
                         > Bắt đầu
                         </Link>
                     </div>
                     <div className="h-full w-[55%] flex justify-center items-center bg-white border-4 border-blue-600 rounded-2xl text-white text-center">
                         <Link
                             to="/pricing"
-                            className="text-blue-600 no-underline text-3xl font-semibold"
+                            className="text-blue-600 no-underline text-3xl font-semibold w-full h-full text-center flex justify-center items-center"
                         > Xem bảng giá
                         </Link>
                     </div>
